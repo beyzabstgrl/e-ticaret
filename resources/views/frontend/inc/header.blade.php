@@ -12,7 +12,7 @@
 
                 <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                     <div class="site-logo">
-                        <a href="{{route('index')}}" class="js-logo-clone">{{config('app.name')}}</a>
+                        <a href="index.html" class="js-logo-clone">{{config('app.name'}}</a>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@
                             <li><a href="#"><span class="icon icon-person"></span></a></li>
                             <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                             <li>
-                                <a href="{{route('sepet')}}">
+                                <a href="cart.html" class="site-cart">
                                     <span class="icon icon-shopping_cart"></span>
                                     <span class="count">2</span>
                                 </a>
@@ -38,9 +38,8 @@
     <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
             <ul class="site-menu js-clone-nav d-none d-md-block">
-                <li class="active"><a href="{{route('index')}}">Anasayfa</a></li>
                 <li class="has-children active">
-                    <a href="#">Kategori</a>
+                    <a href="index.html">Home</a>
                     <ul class="dropdown">
                         <li><a href="#">Menu One</a></li>
                         <li><a href="#">Menu Two</a></li>
