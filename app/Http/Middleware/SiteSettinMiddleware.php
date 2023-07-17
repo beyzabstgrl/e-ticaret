@@ -16,8 +16,10 @@ class SiteSettinMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $settings=SiteSetting::pluck('name','data')->toArray(); //key value yapisi
-           view()->share(['settings'=>$settings]);
+
+        $settings = SiteSetting::pluck('data','name')->toArray();
+        view()->share(['settings'=>$settings]);
         return $next($request);
     }
+
 }
