@@ -23,7 +23,7 @@ class CategorySeeder extends Seeder
             'slug'=>'erkek-giyim'
 
     ]);
-        $erkek= Category::create([
+        Category::create([
             'image'=>null,
             'thumbnail'=>null,
             'cat_ust'=>$erkek->id,
@@ -33,7 +33,7 @@ class CategorySeeder extends Seeder
              'slug'=>'erkek-kazak'
 
         ]);
-        $erkek= Category::create([
+       Category::create([
             'image'=>null,
             'thumbnail'=>null,
             'cat_ust'=>$erkek->id,
@@ -53,7 +53,7 @@ class CategorySeeder extends Seeder
             'slug'=>'kadin-giyim'
 
         ]);
-        $kadin=Category::create([
+         Category::create([
             'image'=>null,
             'thumbnail'=>null,
             'cat_ust'=>$kadin->id,
@@ -63,7 +63,7 @@ class CategorySeeder extends Seeder
             'slug'=>'kadin-canta'
 
         ]);
-        $kadin=Category::create([
+         Category::create([
             'image'=>null,
             'thumbnail'=>null,
             'cat_ust'=>$kadin->id,
@@ -83,7 +83,7 @@ class CategorySeeder extends Seeder
             'slug'=>'cocuk-giyim'
 
         ]);
-        $cocuk=Category::create([
+        Category::create([
             'image'=>null,
             'thumbnail'=>null,
             'cat_ust'=>$cocuk->id,
@@ -93,7 +93,7 @@ class CategorySeeder extends Seeder
              'slug'=>'cocuk-oyuncak'
 
         ]);
-        $cocuk=Category::create([
+          Category::create([
             'image'=>null,
             'thumbnail'=>null,
             'cat_ust'=>$cocuk->id,

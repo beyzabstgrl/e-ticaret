@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['middleware'=>'sitesetting'],function (){
+
 
 Route::get('/',[PageHomeController::class,'index'])->name('index');
 Route::get('/hakkimizda',[PageController::class,'hakkimizda'])->name('hakkimizda');
@@ -25,4 +27,4 @@ Route::get('/cocuk-giyim',[PageController::class,'urunler'])->name('cocukurunler
 Route::get('/indirimdekiler',[PageController::class,'indirimdekiurunler'])->name('indirimdekiurunler');
 Route::get('/urun/detay',[PageController::class,'urundetay'])->name('urundetay');
 Route::get('/sepet',[PageController::class,'cart'])->name('sepet');
-
+});
