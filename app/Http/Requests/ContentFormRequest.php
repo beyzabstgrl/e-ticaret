@@ -22,7 +22,7 @@ class ContentFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|string|min:30',
+            'name'=>'required|string|min:3',
             'email'=>'required|email',
             'subject'=>'required',
             'message'=>'required'

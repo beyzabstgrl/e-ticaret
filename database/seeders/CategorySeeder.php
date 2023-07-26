@@ -20,7 +20,6 @@ class CategorySeeder extends Seeder
              'name'=>'erkek',
              'content'=>'Erkek Giyim ',
              'status'=>'1',
-            'slug'=>'erkek-giyim'
 
     ]);
         Category::create([
@@ -30,7 +29,6 @@ class CategorySeeder extends Seeder
             'name'=>'erkek kazak',
             'content'=>'Erkek kazaklar',
             'status'=>'1',
-             'slug'=>'erkek-kazak'
 
         ]);
        Category::create([
@@ -38,9 +36,8 @@ class CategorySeeder extends Seeder
             'thumbnail'=>null,
             'cat_ust'=>$erkek->id,
             'name'=>'erkek pantolon',
-            'content'=>'Erkek pantolonlar',
+            'content'=>'erkek pantolonlar',
             'status'=>'1',
-            'slug'=>'erkek-pantolon'
 
         ]);
         $kadin=Category::create([
@@ -48,9 +45,8 @@ class CategorySeeder extends Seeder
             'thumbnail'=>null,
             'cat_ust'=>null,
             'name'=>'kadin',
-            'content'=>'Kadin Giyim ',
+            'content'=>'kadin Giyim ',
             'status'=>'1',
-            'slug'=>'kadin-giyim'
 
         ]);
          Category::create([
@@ -58,9 +54,8 @@ class CategorySeeder extends Seeder
             'thumbnail'=>null,
             'cat_ust'=>$kadin->id,
             'name'=>'kadin canta',
-            'content'=>'Kadin cantalar ',
+            'content'=>'kadin cantalar ',
             'status'=>'1',
-            'slug'=>'kadin-canta'
 
         ]);
          Category::create([
@@ -68,9 +63,9 @@ class CategorySeeder extends Seeder
             'thumbnail'=>null,
             'cat_ust'=>$kadin->id,
             'name'=>'kadin pantolon',
-            'content'=>'Kadin pantolonlar ',
+            'content'=>'kadin pantolonlar ',
             'status'=>'1',
-            'slug'=>'kadin-pantolon'
+
 
         ]);
         $cocuk=Category::create([
@@ -78,9 +73,8 @@ class CategorySeeder extends Seeder
             'thumbnail'=>null,
             'cat_ust'=>null,
             'name'=>'cocuk',
-            'content'=>'Cocuk Giyim ',
+            'content'=>'cocuk Giyim ',
             'status'=>'1',
-            'slug'=>'cocuk-giyim'
 
         ]);
         Category::create([
@@ -88,9 +82,9 @@ class CategorySeeder extends Seeder
             'thumbnail'=>null,
             'cat_ust'=>$cocuk->id,
             'name'=>'cocuk oyuncak',
-            'content'=>'Cocuk oyuncaklar ',
+            'content'=>'cocuk oyuncaklar ',
             'status'=>'1',
-             'slug'=>'cocuk-oyuncak'
+
 
         ]);
           Category::create([
@@ -100,7 +94,7 @@ class CategorySeeder extends Seeder
             'name'=>'cocuk pantolon',
             'content'=>'Cocuk pantolonlar ',
             'status'=>'1',
-            'slug'=>'cocuk-pantolon'
+           
 
         ]);
     }

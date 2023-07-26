@@ -43,19 +43,16 @@
                     <a href="">Kategori</a>
                     <ul class="dropdown">
                         @if(!empty($categories)&& $categories->count()>0)
-                            @foreach($categories as $category)
-                                @if($category->cat_ust==null)
+                            @foreach($categories->where('cat_ust',null) as $category)
                                     <li class="has-children">
-                                        <a href="#">{{$category->name}}</a>
+                                        <a href="{{route($category->slug.'urunler')}}">{{$category->name}}</a>
                                         <ul class="dropdown">
-                                            @foreach($categories as $subCategory)
-                                                @if($subCategory->cat_ust==$category->id)
-                                                    <li><a href="#">{{$subCategory->name}}</a></li>
-                                                @endif
+                                            @foreach($category->subcategory as $subCategory)
+                                                    <li><a href="{{route($category->slug.'urunler',$subCategory->slug)}}">{{$subCategory->name}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
-                                @endif
+                                
                             @endforeach
                         @endif
 
@@ -81,5 +78,3 @@
         </div>
     </nav>
 </header>
-
-
