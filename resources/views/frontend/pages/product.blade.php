@@ -12,6 +12,13 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12">
+                    @if(session()->get('success'))
+                        <div class="alert alert-success">{{session()->get('success')}}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <img src="{{asset($product->image)}}" alt="Image" class="img-fluid">
                 </div>
@@ -19,18 +26,24 @@
                     <h2 class="text-black">{{$product->name ?? ''}}</h2>
                     {!! $product->content ?? '' !!}
                     <p><strong class="text-primary h4">{{number_format($product->price,2)}}</strong></p>
+                    <form action="{{route('sepet.add')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{$product->id}}">
                     <div class="mb-1 d-flex">
-                        <label for="option-sm" class="d-flex mr-3 mb-3">
-                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
+                        <label for="option-xs" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xs" name="size" {{$product->size == 'XS' ? 'checked' : ''}} value="XS"></span> <span class="d-inline-block text-black">XS</span>
                         </label>
-                        <label for="option-md" class="d-flex mr-3 mb-3">
-                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">Medium</span>
+                        <label for="option-s" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-s" name="size" {{$product->size == 'S' ? 'checked' : ''}} value="S"></span> <span class="d-inline-block text-black">S</span>
                         </label>
-                        <label for="option-lg" class="d-flex mr-3 mb-3">
-                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">Large</span>
+                        <label for="option-m" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-m" name="size" {{$product->size == 'M' ? 'checked' : ''}} value="M"></span> <span class="d-inline-block text-black">M</span>
                         </label>
-                        <label for="option-xl" class="d-flex mr-3 mb-3">
-                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black"> Extra Large</span>
+                        <label for="option-l" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-l" name="size" {{$product->size == 'L' ? 'checked' : ''}} value="L"></span> <span class="d-inline-block text-black">L</span>
+                        </label>
+                        <label for="option-xxl" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xxl" name="size" {{$product->size == 'XLL' ? 'checked' : ''}}  value="XXL"></span> <span class="d-inline-block text-black">XXL</span>
                         </label>
                     </div>
                     <div class="mb-5">
@@ -38,20 +51,20 @@
                             <div class="input-group-prepend">
                                 <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                             </div>
-                            <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <input type="text" class="form-control text-center" value="1" name="qty" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                             </div>
                         </div>
 
                     </div>
-                    <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
-
+                    <p><button class="buy-now btn btn-sm btn-primary">Add To Cart</button></p>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-@if(!empty($products)&& $products->count()>0)
+        @if(!empty($products)&& $products->count()>0)
+            </div>
     <div class="site-section block-3 site-blocks-2 bg-light">
         <div class="container">
             <div class="row justify-content-center">

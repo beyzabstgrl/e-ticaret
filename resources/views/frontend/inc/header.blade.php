@@ -22,9 +22,9 @@
                             <li><a href="#"><span class="icon icon-person"></span></a></li>
                             <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                             <li>
-                                <a href="cart.html" class="site-cart">
+                                <a href="{{route('sepet')}}" class="site-cart">
                                     <span class="icon icon-shopping_cart"></span>
-                                    <span class="count">2</span>
+                                    <span class="count">{{count(session('cart'))}}</span>
                                 </a>
                             </li>
                             <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -52,7 +52,7 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                
+
                             @endforeach
                         @endif
 

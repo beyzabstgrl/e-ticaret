@@ -25,7 +25,7 @@ public function urunler(Request $request,$slug=null){
    $startprice=$request->start_price ?? null;
     $endprice=$request->end_price ?? null;
 
-   $short=$request->short ?? 'desc';
+   $sort=$request->sort ?? 'desc';
     $order=$request->order ?? 'id';
 
     $products=Product::where('status','1')->select(['id','name','slug','size','color','price','category_id','image'])
@@ -56,7 +56,7 @@ if(!empty($slug)){
      $maxprice=$products->max('price');
     $sizelists=Product::where('status','1')->groupBy('size')->pluck('size')->toArray();
     $colors=Product::where('status','1')->groupBy('color')->pluck('color')->toArray();
-    $products=$products->orderBy($order,$short)->paginate(20);
+    $products=$products->orderBy($order,$sort)->paginate(21);
 
 
     return view('frontend.pages.products',compact('products','minprice','maxprice','sizelists','colors'));
@@ -74,8 +74,6 @@ public function urundetay($slug){
         ->limit(6)->get();
     return view('frontend.pages.product',compact('product','products'));
 }
-public function cart(){
-    return view('frontend.pages.cart');
-}
+
 
 }
